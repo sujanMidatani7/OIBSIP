@@ -1,16 +1,11 @@
 import java.util.*;
 
 class GuessingGame {
-    GuessingGame(){
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        int n = 0;
-        int n2 = -1;
-        System.out.println("<------------ Welcome to the Number Guessing Game ------------>");
-        System.out.println("if you correctly guess --> you wins");
-        System.out.print("Do you wish to play this game?(Y/N) : ");
-        char c = scanner.nextLine().toLowerCase().charAt(0);
-        if (c == 'y') {
+    static void run(){
+            Scanner scanner = new Scanner(System.in);    
+            Random random = new Random();
+            int n = 0;
+            int n2 = -1;
             System.out.println("\nLets start the Game.\n");
             System.out.println("This Game consists of 3 Rounds.\nGuess the number correctly in more than 2 rounds to win!\n");
             for (int i = 1; i != 4; ++i) {
@@ -58,6 +53,17 @@ class GuessingGame {
             }
             System.out.println("<----------------------------------------------------------->\n\n");
             System.out.println("Thank you for playing this game and Have a Wonderful Day!");
+            scanner.close();
+    }
+    GuessingGame(){
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("<------------ Welcome to the Number Guessing Game ------------>");
+        System.out.println("if you correctly guess --> you wins");
+        System.out.print("Do you wish to play this game?(Y/N) : ");
+        char c = scanner.nextLine().toLowerCase().charAt(0);
+        if (c == 'y') {
+            run();
         } else if (c == 'n') {
             System.out.println("Understandable, Have a nice day :)");
         } else {
