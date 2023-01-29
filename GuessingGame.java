@@ -1,39 +1,39 @@
 import java.util.*;
 
 class GuessingGame {
-    public static void main(String[] arrstring) {
+    GuessingGame(){
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         int n = 0;
         int n2 = -1;
-        System.out.println("<------------Welcome to the Number Guessing Game------------>");
-        System.out.println("Guess the number correctly to win the game!!");
-        System.out.print("Do you wish to play this fun game?(Y/N) : ");
+        System.out.println("<------------ Welcome to the Number Guessing Game ------------>");
+        System.out.println("if you correctly guess --> you wins");
+        System.out.print("Do you wish to play this game?(Y/N) : ");
         char c = scanner.nextLine().toLowerCase().charAt(0);
         if (c == 'y') {
-            System.out.println("\nPerfect! Lets start the Game.\n");
+            System.out.println("\nLets start the Game.\n");
             System.out.println("This Game consists of 3 Rounds.\nGuess the number correctly in more than 2 rounds to win!\n");
             for (int i = 1; i != 4; ++i) {
                 int n3 = 1;
                 System.out.println("<----------------------------------------------------------->");
                 System.out.println("ROUND - " + i);
                 int n4 = random.nextInt(101);
-                System.out.println("Now, the Rando-Number has been generated!");
-                System.out.println("It is now the time to guess it.");
-                System.out.println("You have five attempts to clear it!\n");
+                System.out.println("Now, the Random-Number has been generated! by program");
+                System.out.println("It is the time to guess it.");
+                System.out.println("You have five attempts to win it!\n");
                 while (n4 != n2) {
                     System.out.print("Enter your guess : ");
                     n2 = scanner.nextInt();
                     if (n4 < n2) {
-                        System.out.println("Your guess is Higher than the Surprise Number.\n");
+                        System.out.println("Your guess is Higher than the generated Number.\n");
                     } else {
-                        System.out.println("Your guess is Lower than the Surprise Number.\n");
+                        System.out.println("Your guess is Lower than the generated Number.\n");
                     }
-                    if (++n3 != 6) continue;
+                    if (n3++ != 6) continue;
                 }
-                System.out.println("\nRound - " + i + " - Outcome : ");
+                System.out.println("\nRound - " + i + " - result : ");
                 if (n4 == n2) {
-                    System.out.println("HOORAY!! Bulls Eye!\n");
+                    System.out.println("HOORAY!!\n");
                     System.out.println("You have successfully Guessed the number correctly!\n");
                     ++n;
                     if (i != 3) {
@@ -54,7 +54,7 @@ class GuessingGame {
                 System.out.println("YOU WON THE GAME!!!");
             } else {
                 System.out.println("You haven't guessed the correct number for at least 2 Rounds!");
-                System.out.println("Very sad to say that you LOST the Game.!");
+                System.out.println("please try again! you LOST the Game.!");
             }
             System.out.println("<----------------------------------------------------------->\n\n");
             System.out.println("Thank you for playing this game and Have a Wonderful Day!");
@@ -64,5 +64,8 @@ class GuessingGame {
             System.out.println("Please run again and enter a valid choice!");
         }
         scanner.close();
+    }
+    public static void main(String[] arrstring) {
+        GuessingGame g= new GuessingGame();
     }
 }
