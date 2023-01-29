@@ -7,7 +7,7 @@ public class ATM {
         System.out.println("<---Welcome to ATM interface by Sujan Midatani--->");
         Account a=new Account();
         System.out.println("please enter your UserName : \n");
-        if(a.checkUserName(sc.next())==false){System.out.println("please enter valid username!!");}
+        if(!(a.checkUserName(sc.next()))){System.out.println("please enter valid username!!");}
         else{
         System.out.println("enter your pin to verify its you!!");
         if(sc.nextInt()!=a.getpin()){
